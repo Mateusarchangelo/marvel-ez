@@ -1,5 +1,6 @@
 <template lang="html">
     <div>
+        <h1 id="titulo1">Personagem</h1>
         <div class=flex-container>
 
             <div class="flex" v-for="char in character">
@@ -14,6 +15,7 @@
 
         
         </div>
+
         <router-link to="/">
              <button type="button" name="button" class="btn-voltar">Voltar</button>       
         </router-link>
@@ -22,9 +24,11 @@
 </template>
 
 <script>
+
 import {public_key} from '../marvel'
 import axios from 'axios'
 import {mapState} from 'vuex'
+
 export default {
     name: 'Character',
 
@@ -87,6 +91,11 @@ export default {
         border-width: 1px;
         background-color: transparent;
         cursor: pointer;
+    }
+
+    #titulo1{
+        text-align: center;
+        margin: 50px;
     }
 
 

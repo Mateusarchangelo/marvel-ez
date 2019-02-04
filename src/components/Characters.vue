@@ -1,7 +1,9 @@
 <template lang="html">
     <div>
+        <h1 id="titulo1">Personagens</h1>
         <div class="card-container">
             <div class="card" v-for="character in characters">
+                
                 <h3>{{character.name}}</h3>
                 <router-link :to="{name: 'character', params: {id: character.id} }">
                     <button type="button" name="button" class="btn">Ver</button>
@@ -13,9 +15,11 @@
 </template>
 
 <script>
+
 import { public_key, secret_key } from '../marvel'
 import axios from 'axios'
 import {mapState} from 'vuex'
+
 export default {
     name: 'Characters',
 
@@ -40,6 +44,7 @@ export default {
 </script>
 
 <style lang="css">
+
     .card-container{
         margin-left: 500px;
         display: grid;
@@ -64,6 +69,11 @@ export default {
         color: black;
         cursor: pointer;
         border-color: black;
+    }
+
+    #titulo1{
+        text-align: center;
+        margin: 50px;
     }
 
 
